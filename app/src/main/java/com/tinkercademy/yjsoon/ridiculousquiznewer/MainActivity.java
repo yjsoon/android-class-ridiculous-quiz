@@ -2,11 +2,11 @@ package com.tinkercademy.yjsoon.ridiculousquiznewer;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -26,7 +26,14 @@ public class MainActivity extends ActionBarActivity {
         mTrueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("MainActivity", "Hellooo I love potatooooes");
+                Toast.makeText(MainActivity.this, "Correct", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        mFalseButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "WRONG", Toast.LENGTH_SHORT).show();
             }
         });
 
