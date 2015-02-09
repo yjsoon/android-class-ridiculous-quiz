@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -15,6 +16,7 @@ public class MainActivity extends ActionBarActivity {
     private Button mFalseButton;
     private Toast mToast;
 
+    private TextView mQuestionText;
     private int mCurrentQuestion = 0;
     private Question[] mQuestions = new Question[] {
         new Question(R.string.question1, false),
@@ -46,6 +48,9 @@ public class MainActivity extends ActionBarActivity {
                 showToast("WRONG");
             }
         });
+
+        mQuestionText = (TextView) findViewById(R.id.question_text);
+        mQuestionText.setText(mQuestions[mCurrentQuestion].getStatement());
 
     }
 
