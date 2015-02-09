@@ -13,6 +13,7 @@ public class MainActivity extends ActionBarActivity {
 
     private Button mTrueButton;
     private Button mFalseButton;
+    private Toast mToast;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,14 +27,14 @@ public class MainActivity extends ActionBarActivity {
         mTrueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Correct", Toast.LENGTH_SHORT).show();
+                showToast("Correct");
             }
         });
 
         mFalseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "WRONG", Toast.LENGTH_SHORT).show();
+                showToast("WRONG");
             }
         });
 
@@ -62,12 +63,13 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void clickedTrueButton(View v) {
-        // do stuff for true button clicked
-    }
-
-    public void clickedFalseButton(View v) {
-        // do stuff for false button clicked
+    // This is a private function, accessible only to our class
+    private void showToast(String textToShow) {
+        if (mToast != null) {
+            mToast.cancel();
+        }
+        mToast = Toast.makeText(MainActivity.this, textToShow, Toast.LENGTH_SHORT);
+        mToast.show();
     }
 
 }
