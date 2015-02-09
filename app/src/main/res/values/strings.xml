@@ -6,6 +6,10 @@
     <string name="action_settings">Settings</string>
     <string name="true_string">True</string>
     <string name="false_string">False</string>
-    <string name="question_string">Potatoes are great!</string>
+    <string name="question1">The population of Singapore as at December 2014 is 4,000.</string>
+    <string name="question2">A woodchuck can chuck 5.2kg of wood, if it could chuck wood.</string>
+    <string name="question3">The average air speed velocity of a fully laden swallow is 52 m/s.</string>
+    <string name="question4">I dislike potatoes.</string>
+    <string name="question5">Who let the dogs out? Who, who, who, who? Wait, is this a true/false question?</string>
 
 </resources>

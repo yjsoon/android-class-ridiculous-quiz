@@ -15,6 +15,15 @@ public class MainActivity extends ActionBarActivity {
     private Button mFalseButton;
     private Toast mToast;
 
+    private int mCurrentQuestion = 0;
+    private Question[] mQuestions = new Question[] {
+        new Question(R.string.question1, false),
+        new Question(R.string.question2, false),
+        new Question(R.string.question3, false),
+        new Question(R.string.question4, false),
+        new Question(R.string.question5, false)
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
