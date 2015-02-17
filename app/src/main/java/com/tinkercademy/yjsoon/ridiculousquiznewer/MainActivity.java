@@ -53,14 +53,7 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 
-        // Get the TextView for the question
-        mQuestionText = (TextView) findViewById(R.id.question_text);
-        // Get the current question from the array
-        Question currentQuestion = mQuestions[mCurrentQuestion];
-        // Get the statement to be shown
-        int questionReference = currentQuestion.getStatement();
-        // Show it
-        mQuestionText.setText(questionReference);
+        showCurrentQuestion();
 
         // Get the Button for next
         mNextButton = (Button) findViewById(R.id.next_button);
@@ -68,10 +61,8 @@ public class MainActivity extends ActionBarActivity {
         mNextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mCurrentQuestion++; // Just increment lah! Don't care about checking!!
-                Log.d("Potatoes", "My current question is " + mCurrentQuestion);
-                Question currentQuestion = mQuestions[mCurrentQuestion]; // hey repeated code
-                mQuestionText.setText(currentQuestion.getStatement()); // Set to new qn
+                mCurrentQuestion++;
+                showCurrentQuestion(); 
             }
         });
 
@@ -107,6 +98,18 @@ public class MainActivity extends ActionBarActivity {
         }
         mToast = Toast.makeText(MainActivity.this, textToShow, Toast.LENGTH_SHORT);
         mToast.show();
+    }
+
+    // To set the current question
+    private void showCurrentQuestion() {
+        // Get the TextView for the question
+        mQuestionText = (TextView) findViewById(R.id.question_text);
+        // Get the current question from the array
+        Question currentQuestion = mQuestions[mCurrentQuestion];
+        // Get the statement to be shown
+        int questionReference = currentQuestion.getStatement();
+        // Show it
+        mQuestionText.setText(questionReference);
     }
 
 }
