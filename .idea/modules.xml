@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/RidiculousQuizNewer.iml" filepath="$PROJECT_DIR$/RidiculousQuizNewer.iml" />
-      <module fileurl="file://$PROJECT_DIR$/android-class-ridiculous-quiz.iml" filepath="$PROJECT_DIR$/android-class-ridiculous-quiz.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

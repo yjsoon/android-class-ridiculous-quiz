@@ -1,6 +1,5 @@
 package com.tinkercademy.yjsoon.ridiculousquiznewer;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
@@ -43,10 +42,7 @@ public class MainActivity extends ActionBarActivity {
         mTrueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ScoreActivity.class);
-                intent.putExtra(ScoreActivity.EXTRA_SCORE, "potatoes");
-                startActivity(intent);
-
+                showToast("Correct");
             }
         });
 

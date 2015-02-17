@@ -1,26 +1,17 @@
 package com.tinkercademy.yjsoon.ridiculousquiznewer;
 
-import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
 
 
 public class ScoreActivity extends ActionBarActivity {
-
-    public static final String EXTRA_SCORE = "com.tinkercademy.yjsoon.RidiculousQuiz.score";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_score);
-
-        TextView text = (TextView) findViewById(R.id.potato);
-        Intent intent = getIntent();
-        String extra = intent.getStringExtra(ScoreActivity.EXTRA_SCORE);
-        text.setText(extra);
     }
 
 
