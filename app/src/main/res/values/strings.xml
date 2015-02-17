@@ -12,5 +12,7 @@
     <string name="question4">I dislike potatoes.</string>
     <string name="question5">Who let the dogs out? Who, who, who, who? Wait, is this a true/false question?</string>
     <string name="next_string">NEXT</string>
+    <string name="question6">How cool is this?</string>
+    <string name="title_activity_score">ScoreActivity</string>
 
 </resources>

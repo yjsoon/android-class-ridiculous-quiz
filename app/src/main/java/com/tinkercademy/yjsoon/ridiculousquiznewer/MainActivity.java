@@ -2,6 +2,7 @@ package com.tinkercademy.yjsoon.ridiculousquiznewer;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,7 +24,8 @@ public class MainActivity extends ActionBarActivity {
         new Question(R.string.question2, false),
         new Question(R.string.question3, false),
         new Question(R.string.question4, false),
-        new Question(R.string.question5, false)
+        new Question(R.string.question5, false),
+        new Question(R.string.question6, false)
     };
 
     private Button mNextButton;
@@ -67,6 +69,7 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 mCurrentQuestion++; // Just increment lah! Don't care about checking!!
+                Log.d("Potatoes", "My current question is " + mCurrentQuestion);
                 Question currentQuestion = mQuestions[mCurrentQuestion]; // hey repeated code
                 mQuestionText.setText(currentQuestion.getStatement()); // Set to new qn
             }
