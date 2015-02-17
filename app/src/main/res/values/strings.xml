@@ -11,5 +11,6 @@
     <string name="question3">The average air speed velocity of a fully laden swallow is 52 m/s.</string>
     <string name="question4">I dislike potatoes.</string>
     <string name="question5">Who let the dogs out? Who, who, who, who? Wait, is this a true/false question?</string>
+    <string name="next_string">NEXT</string>
 
 </resources>

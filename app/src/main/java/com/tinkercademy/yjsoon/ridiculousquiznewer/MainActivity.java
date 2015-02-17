@@ -26,6 +26,8 @@ public class MainActivity extends ActionBarActivity {
         new Question(R.string.question5, false)
     };
 
+    private Button mNextButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -51,6 +53,15 @@ public class MainActivity extends ActionBarActivity {
 
         mQuestionText = (TextView) findViewById(R.id.question_text);
         mQuestionText.setText(mQuestions[mCurrentQuestion].getStatement());
+
+        mNextButton = (Button) findViewById(R.id.next_button);
+        mNextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mCurrentQuestion++;
+                mQuestionText.setText(mQuestions[mCurrentQuestion].getStatement());
+            }
+        });
 
     }
 
