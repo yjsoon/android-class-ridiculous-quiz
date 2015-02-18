@@ -22,9 +22,9 @@ public class MainActivity extends ActionBarActivity {
     private int mCurrentQuestion = 0;
     private Question[] mQuestions = new Question[] {
         new Question(R.string.question1, false),
-        new Question(R.string.question2, false),
+        new Question(R.string.question2, true),
         new Question(R.string.question3, false),
-        new Question(R.string.question4, false),
+        new Question(R.string.question4, true),
         new Question(R.string.question5, false),
         new Question(R.string.question6, false)
     };
@@ -43,14 +43,14 @@ public class MainActivity extends ActionBarActivity {
         mTrueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showToast("Correct");
+                checkUserAnswer(true);
             }
         });
 
         mFalseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showToast("WRONG");
+                checkUserAnswer(false);
             }
         });
 
@@ -119,6 +119,17 @@ public class MainActivity extends ActionBarActivity {
         int questionReference = currentQuestion.getStatement();
         // Show it
         mQuestionText.setText(questionReference);
+    }
+
+    // This checks what the user entered against the truthiness of the current question,
+    // and displays an appropriate Toast for it
+    private void checkUserAnswer(boolean userSelectedTrue) {
+        Question currentQuestion = mQuestions[mCurrentQuestion];
+        if (userSelectedTrue == currentQuestion.isStatementTruth()) {
+            showToast(getString(R.string.correct));
+        } else {
+            showToast(getString(R.string.wrong));
+        }
     }
 
 }

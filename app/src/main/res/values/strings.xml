@@ -15,5 +15,7 @@
     <string name="question6">How cool is this?</string>
     <string name="title_activity_score">ScoreActivity</string>
     <string name="no_more_questions">No more questions</string>
+    <string name="correct">Correct!</string>
+    <string name="wrong">Wrong!</string>
 
 </resources>
