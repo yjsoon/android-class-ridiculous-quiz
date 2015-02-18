@@ -1,17 +1,25 @@
 package com.tinkercademy.yjsoon.ridiculousquiznewer;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 
 public class ScoreActivity extends ActionBarActivity {
+
+    public static final String SCORE_EXTRA_INT = "com.tinkercademy.yjsoon.RidiculousQuiz.scoreExtraInt";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_score);
+        Intent intent = getIntent();
+        int score = intent.getIntExtra(SCORE_EXTRA_INT, 0);
+        TextView scoreView = (TextView) findViewById(R.id.score_display);
+        scoreView.setText(score + "%"); // add an int into a String to make it a String
     }
 
 

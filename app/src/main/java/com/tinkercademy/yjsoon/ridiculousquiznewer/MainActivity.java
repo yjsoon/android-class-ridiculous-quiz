@@ -1,5 +1,6 @@
 package com.tinkercademy.yjsoon.ridiculousquiznewer;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -30,6 +31,9 @@ public class MainActivity extends ActionBarActivity {
     };
 
     private Button mNextButton;
+    private Button mShowScoreButton;
+
+    private int mScore = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +60,7 @@ public class MainActivity extends ActionBarActivity {
 
         showCurrentQuestion();
 
+
         // Get the Button for next
         mNextButton = (Button) findViewById(R.id.next_button);
         // Set the appropriate listener
@@ -74,8 +79,22 @@ public class MainActivity extends ActionBarActivity {
                     mNextButton.setText(getString(R.string.no_more_questions));
                     mNextButton.setTextColor(Color.GRAY);
                     mNextButton.setClickable(false);
+                    // show the "show score" button
+                    mShowScoreButton.setVisibility(View.VISIBLE);
                 }
                 showCurrentQuestion();
+            }
+        });
+
+        mShowScoreButton = (Button) findViewById(R.id.show_score_button);
+        mShowScoreButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ScoreActivity.class);
+                // calculate our percentage score
+                int percentageScore = Math.round((float) mScore / mQuestions.length * 100); // caaasting
+                intent.putExtra(ScoreActivity.SCORE_EXTRA_INT, percentageScore);
+                startActivity(intent);
             }
         });
 
@@ -131,6 +150,7 @@ public class MainActivity extends ActionBarActivity {
         Question currentQuestion = mQuestions[mCurrentQuestion];
         if (userSelectedTrue == currentQuestion.isStatementTruth()) {
             showToast(getString(R.string.correct));
+            mScore++;
         } else {
             showToast(getString(R.string.wrong));
         }
