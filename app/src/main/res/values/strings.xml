@@ -17,5 +17,7 @@
     <string name="no_more_questions">No more questions</string>
     <string name="correct">Correct!</string>
     <string name="wrong">Wrong!</string>
+    <string name="your_score_is">Congratulations!\nYour score is…</string>
+    <string name="show_score">Show your score</string>
 
 </resources>

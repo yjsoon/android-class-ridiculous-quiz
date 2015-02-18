@@ -44,4 +44,13 @@
         android:text="@string/next_string"
         />
 
+    <Button
+        android:id="@+id/show_score_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:visibility="invisible"
+        android:text="@string/show_score"
+        />
+
 </LinearLayout>
