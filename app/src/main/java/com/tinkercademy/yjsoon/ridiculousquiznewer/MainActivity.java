@@ -66,7 +66,11 @@ public class MainActivity extends ActionBarActivity {
                 // increment it to length and try to access array[length] -- out of bounds
                 if (mCurrentQuestion < mQuestions.length - 1) {
                     mCurrentQuestion++;
-                } else {
+                }
+
+                // however, we also want to disable the next button the moment we reach
+                // the last question. hence this isn't an "else if".
+                if (mCurrentQuestion == mQuestions.length - 1) {
                     mNextButton.setText(getString(R.string.no_more_questions));
                     mNextButton.setTextColor(Color.GRAY);
                     mNextButton.setClickable(false);
