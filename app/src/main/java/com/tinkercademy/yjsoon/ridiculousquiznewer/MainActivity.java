@@ -1,5 +1,6 @@
 package com.tinkercademy.yjsoon.ridiculousquiznewer;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
@@ -61,8 +62,16 @@ public class MainActivity extends ActionBarActivity {
         mNextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mCurrentQuestion++;
-                showCurrentQuestion(); 
+                // check for 1 less than mQuestions.length, because otherwise we'll
+                // increment it to length and try to access array[length] -- out of bounds
+                if (mCurrentQuestion < mQuestions.length - 1) {
+                    mCurrentQuestion++;
+                } else {
+                    mNextButton.setText(getString(R.string.no_more_questions));
+                    mNextButton.setTextColor(Color.GRAY);
+                    mNextButton.setClickable(false);
+                }
+                showCurrentQuestion();
             }
         });
 

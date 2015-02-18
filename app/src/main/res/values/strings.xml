@@ -14,5 +14,6 @@
     <string name="next_string">NEXT</string>
     <string name="question6">How cool is this?</string>
     <string name="title_activity_score">ScoreActivity</string>
+    <string name="no_more_questions">No more questions</string>
 
 </resources>
