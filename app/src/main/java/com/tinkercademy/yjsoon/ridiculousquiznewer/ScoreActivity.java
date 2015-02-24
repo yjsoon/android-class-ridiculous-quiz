@@ -15,6 +15,7 @@ public class ScoreActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // TODO: Finish this code
         setContentView(R.layout.activity_score);
         Intent intent = getIntent();
         int score = intent.getIntExtra(SCORE_EXTRA_INT, 0);
