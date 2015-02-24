@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,7 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-public class MainActivity extends ActionBarActivity {
+public class QuizActivity extends ActionBarActivity {
 
     private Button mTrueButton;
     private Button mFalseButton;
@@ -90,7 +89,7 @@ public class MainActivity extends ActionBarActivity {
         mShowScoreButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ScoreActivity.class);
+                Intent intent = new Intent(QuizActivity.this, ScoreActivity.class);
                 // calculate our percentage score
                 int percentageScore = Math.round((float) mScore / mQuestions.length * 100); // caaasting
                 intent.putExtra(ScoreActivity.SCORE_EXTRA_INT, percentageScore);
@@ -128,7 +127,7 @@ public class MainActivity extends ActionBarActivity {
         if (mToast != null) {
             mToast.cancel();
         }
-        mToast = Toast.makeText(MainActivity.this, textToShow, Toast.LENGTH_SHORT);
+        mToast = Toast.makeText(QuizActivity.this, textToShow, Toast.LENGTH_SHORT);
         mToast.show();
     }
 
