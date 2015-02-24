@@ -1,0 +1,60 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context=".MainActivity$PlaceholderFragment">
+
+    <Button
+        android:id="@+id/true_button"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:drawableLeft="@drawable/true_icon"
+        android:drawablePadding="5dp"
+        android:text="@string/true_string"/>
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center_horizontal|center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/question_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="24dp"
+            />
+
+        <Button
+            android:id="@+id/next_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/next_string"
+            />
+
+        <Button
+            android:id="@+id/show_score_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:visibility="invisible"
+            android:text="@string/show_score"
+            />
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/false_button"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:drawableLeft="@drawable/false_icon"
+        android:drawablePadding="5dp"
+        android:text="@string/false_string"/>
+
+
+</LinearLayout>

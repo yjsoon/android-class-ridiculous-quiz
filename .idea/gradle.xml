@@ -8,8 +8,8 @@
         <option name="gradleHome" value="C:\Program Files\Android Studio\gradle\gradle-2.2.1" />
         <option name="modules">
           <set>
-            <option value="$USER_HOME$/Dropbox/Projects/Android/RidiculousQuizNewer" />
-            <option value="$USER_HOME$/Dropbox/Projects/Android/RidiculousQuizNewer/app" />
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/app" />
           </set>
         </option>
       </GradleProjectSettings>
