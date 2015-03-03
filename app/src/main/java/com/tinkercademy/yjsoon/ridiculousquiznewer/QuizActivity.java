@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.view.ActionMode;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -32,6 +33,9 @@ public class QuizActivity extends ActionBarActivity {
     private Button mNextButton;
     private Button mShowScoreButton;
 
+    private static final String KEY_CURRENT_QUESTION = "current question";
+    private static final String KEY_SCORE = "score";
+
     private int mScore = 0;
 
     @Override
@@ -57,8 +61,12 @@ public class QuizActivity extends ActionBarActivity {
             }
         });
 
+        // restore data before showing current question
+        if (savedInstanceState != null) {
+            mCurrentQuestion = savedInstanceState.getInt(KEY_CURRENT_QUESTION);
+            mScore = savedInstanceState.getInt(KEY_SCORE);
+        }
         showCurrentQuestion();
-
 
         // Get the Button for next
         mNextButton = (Button) findViewById(R.id.next_button);
@@ -97,7 +105,18 @@ public class QuizActivity extends ActionBarActivity {
             }
         });
 
+        getResources().getString(R.string.abc_action_bar_home_description);
+
     }
+
+    // Save before we get killed off
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt(KEY_CURRENT_QUESTION, mCurrentQuestion);
+        outState.putInt(KEY_SCORE, mScore);
+    }
+
 
     // This is a private function, accessible only to our class
     private void showToast(String textToShow) {
